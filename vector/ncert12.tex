@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[none]{hyphenat}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{caption} 
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amssymb} 
+\usepackage{amsmath}   
+\usepackage{extarrows}
+\usepackage{listings}
+\lstset{
+  frame=single,
+  breaklines=true
+}
+\usepackage{hyperref}
+\usepackage{atbegshi}
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\let\vec\mathbf
+\begin{document}
+\begin{center}
+\title{\textbf{Vector problem}}
+\date{\vspace{-5ex}} 
+\maketitle
+\end{center}
+\setcounter{page}{1}
+\section{12$^{th}$ Maths - Chapter 12}
+\textbf{This is Problem-6 from Exercise 10.5}
+\begin{enumerate}
+ \item Find a vector of magnitude $5$ units, and parallel to the resultant of the vectors $\vec{a}$ =$2\vec{\hat{i}}+3\vec{\hat{j}}-\vec{\hat{k}}$ and $\vec{b}$ = $\vec{\hat{i}}-2\vec{\hat{j}}+\vec{\hat{k}}$\\
+\textbf{Solution:}\\
+\item sum of the resultant vectors $\vec{a}$ and $\vec{b}$ is \\
+\begin{align} 
+\vec{a}=\myvec{2\\3\\-1}\\
+\vec{b}=\myvec{1\\-2\\1}\\
+\vec{c}=\vec{a}+\vec{b}\\
+\vec{c}=\myvec{2\\3\\-1} + \myvec{1\\-2\\1}\\
+\vec{c}=\myvec{3\\1\\0}\\
+\end{align}   
+\item The unit direction of the vector $\vec{c}$ is \\
+ \[ \Vec{\hat{c}}=\frac{\vec{c}}{\norm{\vec{c}}} \\
+ 
+ \[ \vec{\hat{c}}=\frac{\myvec{3\\1\\0}}{\sqrt{3^2 + 1^2}}\]
+ \[ \vec{\hat{c}}=\frac{\myvec{3\\1\\0}}{\sqrt{10}}\]
+ \item Hence, the vector of magnitude $5$ units and parallel to the resultant of vectors $\vec{a}$ and $\vec{b}$ is $\pm 5\vec{\hat{c}}$\\
+ \begin{align}
+  \implies \pm \frac{5}{\sqrt{10}} \myvec{3\\1\\0}\\
+  \implies \pm \myvec{{\frac{3\sqrt{10}}{2}}\\{\frac{\sqrt{10}}{2}}\\{0}}
+ \end{align}
+\end{enumerate} 
+\end{document}
