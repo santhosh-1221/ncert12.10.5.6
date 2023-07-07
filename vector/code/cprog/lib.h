@@ -58,7 +58,7 @@ void print(double **p, int m, int n) {
     }
 }
 
-
+ //  adding of the two matrices a and b
 double **matc(double **mat1, double **mat2) {
     double **sum = (double**)malloc(3 * sizeof(*sum));
     for (int i = 0; i < 3; i++) {
@@ -68,7 +68,9 @@ double **matc(double **mat1, double **mat2) {
 
     return sum;
 }
+// end the ouput with c
 
+//finding the norm 
 double linalg_norm(double **a, int m) {
     double norm = 0.0;
 
@@ -78,7 +80,7 @@ double linalg_norm(double **a, int m) {
 
     return sqrt(norm);
 }
-
+// finding the scalar product of magnitude 5 units
 double **scalarProduct(double scalar, double **mat) {
     double **product = (double**)malloc(3 * sizeof(*product));
 
@@ -89,7 +91,7 @@ double **scalarProduct(double scalar, double **mat) {
 
     return product;
 }
-
+//end with the output
 void save_vector(double **a, int rows, int cols)
 {
 	FILE *fp;
