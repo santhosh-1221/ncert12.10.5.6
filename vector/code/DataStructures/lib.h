@@ -1,12 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
+
 
 typedef struct node {
     double data;
     struct node *right, *down;
 } node;
-
+//Function prototypes
+double** createmat(double v1, double v2,double v3);
+node* constructLinkedMatrix(double** mat, int m, int n);
+double** createMatrix(double v1, double v2, double v3);
+void printLinkedMatrix(node* head);
+void scalarProduct(node* head, double scalar);
+void matSum(node* h1, node* h2);
+double vectorNorm(node* head);
+void createDatMat(char* filename, node* head);
 node* newNode(double d) {
     node* temp = (node*)malloc(sizeof(node));
     temp->data = d;
@@ -14,7 +22,7 @@ node* newNode(double d) {
     temp->down = NULL;
     return temp;
 }
-
+  //Function to construct a linked matrix from a 2D array.	 
 node* constructLinkedMatrix(double** mat, int m, int n) {
     node* mainHead = NULL;
     node* rowHead[m];
@@ -49,6 +57,7 @@ node* constructLinkedMatrix(double** mat, int m, int n) {
   
     return mainHead;
 }
+// function to create the matrix 
 double** createmat(double v1, double v2,double v3) {
     double** vector = (double**)malloc(2 * sizeof(*vector));
     for(int i = 0; i < 3; i++)
@@ -87,7 +96,7 @@ void printLinkedMatrix(node* head) {
         rowPtr = rowPtr->down;
     }
 }
-
+// function for finding scalar product
 void scalarProduct(node* head, double scalar) {
     node* rowPtr = head;
     node* colPtr = NULL;
@@ -101,6 +110,7 @@ void scalarProduct(node* head, double scalar) {
         rowPtr = rowPtr->down;
     }
 }
+// function for finding the matrix sum
 void matSum(node* h1, node* h2) {
     node *rp1, *rp2, *dp1 = h1, *dp2 = h2;
     
@@ -116,7 +126,7 @@ void matSum(node* h1, node* h2) {
         dp2 = dp2->down;
     }
 }
-
+// function  for finding the norm
 double vectorNorm(node* head) {
     node* rowPtr = head;
     node* colPtr = NULL;
@@ -133,6 +143,7 @@ double vectorNorm(node* head) {
 
     return sqrt(norm);
 }
+// function for writing of matrix in dat file
 void createDatMat(char* filename, node* head) {
     FILE *fp = fopen(filename, "w");
     node *rp, *dp = head;
