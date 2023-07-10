@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "lib.h"
-
+#include "lib.h"                  // include user-defined library that contains required functions
 
 int main() {
     double matA[3] = { 2.0, 3.0, -1.0 };
@@ -11,9 +10,9 @@ int main() {
     double** b = createmat(matB[0], matB[1], matB[2]);
 
     node* linkedMatrixA = constructLinkedMatrix(a, 3, 1);
-    createDatMat("a.dat",linkedMatrixA);
+    createDatMat("a.dat",linkedMatrixA);                  // include a.dat file 
    node* linkedMatrixB = constructLinkedMatrix(b, 3, 1);
-createDatMat("b.dat",linkedMatrixB);
+createDatMat("b.dat",linkedMatrixB);                   // function for including the b.dat file   
     printf("Linked Matrix A:\n");
     printLinkedMatrix(linkedMatrixA);
     
@@ -23,10 +22,10 @@ createDatMat("b.dat",linkedMatrixB);
     node* linkedMatrixC = constructLinkedMatrix(a, 3,1);
     matSum(linkedMatrixC, linkedMatrixB);
 
-    printf("Linked Matrix C = A + B:\n");
+    printf("Linked Matrix C = A + B:\n");               // function to print the sum of two matrices A&B
     printLinkedMatrix(linkedMatrixC);
 
-    double e = vectorNorm(linkedMatrixC);
+    double e = vectorNorm(linkedMatrixC);             // finding the norm e
     printf("Norm of C: %.6lf\n", 1/e);
 
     scalarProduct(linkedMatrixC, 1 / e);
@@ -35,7 +34,7 @@ createDatMat("b.dat",linkedMatrixB);
     printLinkedMatrix(linkedMatrixC);
     scalarProduct(linkedMatrixC,5.0);
 
-    printf("Scalar Product of C with magnitude 5:\n");
+    printf("Scalar Product of C with magnitude 5:\n");     // function for multiplying the scalar product with magnitude 5 units
 
     printLinkedMatrix(linkedMatrixC);
    createDatMat("vector.dat",linkedMatrixC);
