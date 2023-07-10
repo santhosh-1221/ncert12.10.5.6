@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "lib.h"                  // include user-defined library that contains required functions
+#include "lib.h"                 // include user-defined library that contains required functions
 
 int main() {
     double matA[3] = { 2.0, 3.0, -1.0 };
